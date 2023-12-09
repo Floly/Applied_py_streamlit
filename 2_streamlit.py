@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import statsmodels
-import seaborn as sns
+from statsmodels.discrete.discrete_model import Logit
 
 df = pd.read_csv('datasets/D_basic.csv', index_col=0)
 
@@ -28,7 +27,7 @@ feats = df.columns.tolist()[3:]
 target = 'TARGET'
 Xtrain = df[feats]
 ytrain = df[target]
-log_reg = sm.Logit(ytrain, Xtrain).fit() 
+log_reg = Logit(ytrain, Xtrain).fit() 
 log_reg.summary().tables[0]
 
 message = '''

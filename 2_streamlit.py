@@ -19,3 +19,7 @@ with st.expander("Распределения признаков"):
         fig = px.histogram(df[col],
                         title=f'{col} DISTRIBUTION')
         st.plotly_chart(fig)
+
+st.markdown("Посмотрим на матрицу корреляций")
+corr_fig = px.density_heatmap(df.iloc[:,2:].corr())
+st.plotly_chart(corr_fig)

@@ -28,7 +28,7 @@ target = 'TARGET'
 Xtrain = df[feats]
 ytrain = df[target]
 log_reg = Logit(ytrain, Xtrain).fit() 
-log_reg.summary().tables[0]
+summary = log_reg.summary2()
 
 message = '''
     ### Попробуем выявить зависимости между признаками и таргетом
@@ -36,8 +36,8 @@ message = '''
     '''
 st.markdown(message)
 st.markdown('Качество получившейся модели')
-st.dataframe(log_reg.summary().tables[0])
+st.dataframe(summary.tables[0])
 
 st.markdown('Влияние признаков на таргета')
-st.dataframe(log_reg.summary().tables[1])
+st.dataframe(summary.tables[1])
 

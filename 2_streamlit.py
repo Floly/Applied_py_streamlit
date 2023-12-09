@@ -13,6 +13,9 @@ st.markdown(body=first_line)
 st.dataframe(data=df.head(4))
 
 cols = df.columns.tolist()[2:]
-for col in cols:
-    fig = px.histogram(df[col], title=f'{col} DISTRIBUTION')
-    st.plotly_chart(fig)
+
+with st.expander("Распределения признаков"):
+    for col in cols:
+        fig = px.histogram(df[col],
+                        title=f'{col} DISTRIBUTION')
+        st.plotly_chart(fig)

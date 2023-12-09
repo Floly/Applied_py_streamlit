@@ -5,3 +5,4 @@ plotly-express
 polars
 seaborn
 matplotlib
+statsmodels

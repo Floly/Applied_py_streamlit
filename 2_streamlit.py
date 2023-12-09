@@ -6,9 +6,7 @@ import seaborn as sns
 
 df = pd.read_csv('datasets/D_basic.csv', index_col=0)
 
-st.markdown(body=first_line)
-
-st.markdown(body="Первые 4 строки датафрейма")
+st.markdown("Первые 4 строки датафрейма")
 st.dataframe(data=df.head(4))
 
 cols = df.columns.tolist()[2:]

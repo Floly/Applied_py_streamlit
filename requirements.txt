@@ -6,3 +6,4 @@ polars
 seaborn
 matplotlib
 statsmodels
+sklearn

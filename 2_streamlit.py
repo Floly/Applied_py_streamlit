@@ -24,7 +24,8 @@ st.markdown("### Посмотрим на матрицу корреляций")
 corr_fig = px.imshow(df.iloc[:,2:].corr().round(2), text_auto=True)
 st.plotly_chart(corr_fig)
 
-
+feats = df.columns.tolist()[3:]
+target = 'TARGET'
 Xtrain = df[feats]
 ytrain = df[target]
 log_reg = sm.Logit(ytrain, Xtrain).fit() 

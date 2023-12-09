@@ -21,5 +21,5 @@ with st.expander("Распределения признаков"):
         st.plotly_chart(fig)
 
 st.markdown("Посмотрим на матрицу корреляций")
-corr_fig = px.density_heatmap(df.iloc[:,2:].corr())
+corr_fig = px.imshow(df.iloc[:,2:].corr().round(2), text_auto=True)
 st.plotly_chart(corr_fig)
